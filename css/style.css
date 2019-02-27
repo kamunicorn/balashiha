@@ -1,0 +1,341 @@
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Nokia';
+  src: url("/fonts/Nokia-Sans-S60-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header__bar {
+  background-image: url("/img/back-rect-1-small.png");
+  height: 85px;
+}
+
+.header__bar .bar__logo {
+  height: 85px;
+}
+
+.header__bar .bar__logo img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  border-left: 4px white solid;
+  border-right: 4px white solid;
+}
+
+.header__bar .bar__site-name {
+  font-family: Nokia, Roboto, Arial, sans-serif;
+  color: #393939;
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.header__bar .bar__site-subtitle {
+  margin-top: 0px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 300;
+  color: #f64747;
+}
+
+.header__bar .call-me {
+  text-align: right;
+  margin-top: 15px;
+}
+
+.header__bar .call-me__phone {
+  color: #393939;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.header__bar .call-me__phone_big {
+  font-size: 1.5em;
+}
+
+.header__bar .call-me__request {
+  margin-top: -5px;
+}
+
+.header__bar .call-me__icon, .header__bar .call-me__arrow, .header__bar .call-me__text {
+  display: inline;
+  margin-left: 2px;
+  height: 15px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.header__bar .call-me__icon {
+  width: 15px;
+}
+
+.header__bar .call-me__arrow {
+  color: #f64747;
+  font-size: 20px;
+}
+
+.header__bar .call-me__text {
+  font-size: 14px;
+  font-weight: 300;
+  color: #f64747;
+  border-bottom: 1px dashed #f64747;
+}
+
+.header__bar .call-me__text:hover {
+  border-style: none;
+  cursor: pointer;
+}
+
+.header__title {
+  font-family: "Roboto Condensed", sans-serif;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #7d3803;
+  font-size: 56px;
+  font-weight: 600;
+}
+
+.header__subtitle {
+  text-align: center;
+  margin-top: 10px;
+  color: #272727;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.header__main-image {
+  position: relative;
+}
+
+.header__main-image img {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  width: 750px;
+}
+
+.offer {
+  width: 310px;
+  border: 5px solid #fdf1cf;
+  background-color: #f64747;
+  padding: 10px 20px 20px;
+  position: relative;
+}
+
+.offer::before {
+  position: absolute;
+  content: url("/img/header-offer-shadow.png");
+  bottom: -8px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: -1;
+}
+
+.offer::after {
+  position: absolute;
+  content: url("/img/header-grains.png");
+  bottom: 0;
+  left: 190px;
+  z-index: -2;
+}
+
+.offer__title {
+  text-align: center;
+  color: #fdf1cf;
+  font-family: "Roboto Condensed";
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.offer-form input, .offer-form button {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+}
+
+.offer-form input {
+  height: 45px;
+  color: #292929;
+  font-size: 14px;
+  margin-bottom: 7px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 40px 10px 15px;
+  background-position: 95% center;
+  background-repeat: no-repeat;
+}
+
+.offer-form input:placeholder {
+  color: #2f2f2f;
+}
+
+.offer-form__name {
+  background-image: url("/img/icon-name.png");
+}
+
+.offer-form__mail {
+  background-image: url("/img/icon-mail.png");
+}
+
+.offer-form__phone {
+  background-image: url("/img/icon-tel.png");
+}
+
+.offer-form__submit {
+  border: none;
+  margin-top: 12px;
+  height: 57px;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.09);
+  font-family: "Roboto Condensed";
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#03c9a9), to(#13efcb));
+  background-image: linear-gradient(to top, #03c9a9 0%, #13efcb 100%);
+}
+
+.offer-confident {
+  margin-top: 15px;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.offer-confident * {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.offer-confident__text {
+  margin: 0 3px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 400;
+  width: 77%;
+}
+
+@media (max-width: 1199px) {
+  .offer::after {
+    position: relative;
+    content: '';
+    bottom: 0;
+    left: 0;
+  }
+  .header__main-image img {
+    display: block;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 95%;
+  }
+  .header__title {
+    font-size: 45px;
+  }
+  .header__subtitle {
+    font-size: 18px;
+  }
+  .offer {
+    width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__bar .bar__logo img {
+    margin-right: auto;
+  }
+  .header__bar .bar__site-name {
+    margin-top: 10px;
+    font-size: 23px;
+  }
+  .header__bar .bar__site-subtitle {
+    font-size: 12px;
+  }
+  .header__bar .call-me {
+    margin-top: 10px;
+    padding: 0;
+  }
+  .header__bar .call-me__phone, .header__bar .call-me__text {
+    font-size: 12px;
+  }
+  .offer {
+    max-width: 500px;
+  }
+  .offer::before {
+    position: relative;
+    content: '';
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .header__bar {
+    height: 130px;
+  }
+  .header__bar .bar__logo {
+    height: 130px;
+  }
+  .header__bar .call-me {
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: -65px;
+    text-align: left;
+  }
+  .header__title {
+    font-size: 35px;
+  }
+  .header__subtitle {
+    font-size: 16px;
+    text-transform: none;
+  }
+  .offer {
+    width: 97%;
+  }
+}
+
+@media (max-width: 479px) {
+  .header__bar {
+    height: 90px;
+  }
+  .header__bar .bar__logo {
+    height: 90px;
+  }
+  .header__bar .bar__site-name {
+    margin-top: 15px;
+  }
+  .header__bar .bar__site-subtitle {
+    font-size: 14px;
+  }
+  .header__bar .call-me {
+    display: none;
+  }
+  .offer-confident img {
+    height: 20px;
+  }
+}
