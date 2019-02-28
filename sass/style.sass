@@ -1,4 +1,5 @@
 $accent: #f64747
+$backBrown: #fcf2d1
 
 html
     font-family: 'Roboto', sans-serif
@@ -14,69 +15,55 @@ a
     font-weight: normal
     font-style: normal
 
-.header
-    padding-bottom: 70px
-.header__bar
+.bar
     background-image: url('/img/back-rect-1-small.png')
     height: 85px
+    &__logo
+        height: 85px
+    &__logo img
+        max-width: 100%
+        display: block
+        margin-left: auto
+        margin-right: 0
+        border-left: 4px white solid
+        border-right: 4px white solid
+    &__site-name
+        font-family: 'Nokia', 'Roboto', Arial, sans-serif
+        color: #393939
+        font-size: 26px
+        font-weight: 700
+        text-transform: uppercase
+        margin-top: 15px
+        margin-bottom: 0px
+    &__site-subtitle
+        margin-top: 0px
+        font-family: Roboto
+        font-size: 14px
+        font-weight: 300
+        color: $accent
 
-    .bar
-        &__logo
-            height: 85px
-        &__logo img
-            max-width: 100%
-            display: block
-            margin-left: auto
-            margin-right: 0
-            border-left: 4px white solid
-            border-right: 4px white solid
-        &__site-name
-            font-family: Nokia, Roboto, Arial, sans-serif
-            color: #393939
-            font-size: 26px
-            font-weight: 700
-            text-transform: uppercase
-            margin-top: 15px
-            margin-bottom: 0px
-        &__site-subtitle
-            margin-top: 0px
-            font-family: Roboto
-            font-size: 14px
-            font-weight: 300
-            color: $accent
-            
     .call-me
         text-align: right
         margin-top: 15px
-
         &__phone
             color: #393939
             font-weight: 400
             font-size: 16px
-            &:hover
-                // border-bottom: 1px dashed #393939
-            
         &__phone_big
             font-size: 1.3em
             font-weight: bold
-            
-        &__request
-            margin-top: -5px
-            
+
         &__icon, &__arrow, &__text
             display: inline
             margin-left: 2px
             height: 15px
             margin-top: 0
             padding-top: 0
-            
         &__icon
             width: 15px
-            
         &__arrow
             color: $accent
             font-size: 20px
-            
         &__text
             font-size: 14px
             font-weight: 300
@@ -87,8 +74,9 @@ a
                 cursor: pointer
 
 .header
+    padding-bottom: 70px
     &__title
-        font-family: "Roboto Condensed", sans-serif
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
         text-align: center
         margin-top: 40px
         margin-bottom: 10px
@@ -96,12 +84,11 @@ a
         color: #7d3803
         font-size: 56px
         font-weight: 600
-        
     &__subtitle
         text-align: center
         margin-top: 10px
         color: #272727
-        font-family: "Roboto Condensed", sans-serif
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
         font-size: 22px
         font-weight: 600
         text-transform: uppercase
@@ -124,20 +111,24 @@ a
     &::before
         position: absolute
         content: url('/img/header-offer-shadow.png')
-        bottom: -8px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: -1;
+        bottom: -8px
+        left: 50%
+        transform: translateX(-50%)
+        z-index: -1
     &::after
-        position: absolute
-        content: url('/img/header-grains.png')
-        bottom: 10%;
-        left: 240px;
-        z-index: -2
+            position: absolute
+            height: 300px
+            width: 18vw
+            background: url('/img/header-grains.png') no-repeat right bottom
+            background-size: contain
+            content: ''
+            bottom: 10%
+            left: 236px
+            z-index: -2
     &__title
         text-align: center
         color: #fdf1cf
-        font-family: "Roboto Condensed", sans-serif
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
         font-size: 16px
         text-transform: uppercase
 
@@ -172,7 +163,7 @@ a
             margin-top: 12px
             height: 57px
             text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.09)
-            font-family: "Roboto Condensed"
+            font-family: 'Roboto Condensed', 'Roboto', sans-serif
             color: #ffffff
             font-size: 18px
             font-weight: 600
@@ -182,19 +173,19 @@ a
     &-confident
         margin: 15px auto 10px
         height: 30px
-        text-align: center;
-    &-confident *
-        display: inline-block
-        vertical-align: middle
         text-align: center
-        margin-left: auto
-        margin-right: auto
-    &-confident__text
-        margin: 0 3px
-        color: #ffffff
-        font-size: 11px
-        font-weight: 400
-        width: 75%
+        *
+            display: inline-block
+            vertical-align: middle
+            text-align: center
+            margin-left: auto
+            margin-right: auto
+        &__text
+            margin: 0 3px
+            color: #ffffff
+            font-size: 11px
+            font-weight: 400
+            width: 75%
 
 .section
     padding-top: 50px
@@ -205,7 +196,7 @@ a
         text-align: center
         text-transform: uppercase
         color: #1b1b1b
-        font-family: "Roboto Condensed"
+        font-family: 'Roboto Condensed', 'Roboto', sans-serif
         font-size: 32px
         font-weight: 400
     &__subtitle-image
@@ -216,7 +207,7 @@ a
         background-size: 40px
 
 .our-foto
-    background-color: #f3e2b6
+    background-color: $backBrown
     &__text
         color: #1b1b1b
         font-family: Roboto
@@ -263,6 +254,29 @@ a
             border: 3px #fff solid
             border-radius: 5px
 
+.advantages
+    background-color: $backBrown
+    &__item
+        color: #1b1b1b
+        margin-bottom: 30px
+        padding-left: 10px
+        padding-right: 10px
+    &__icon
+        float: left
+        margin-top: 7px
+    &__title
+        font-size: 18px
+        font-weight: bold
+        width: 77%
+        margin: 5px 0 8px auto
+    &__text
+        font-size: 15px
+        font-weight: 300
+        margin-top: 8px
+        margin-left: auto
+        margin-right: 0
+        width: 77%
+
 @media (max-width: 1419px)
     // адаптация псевдоэлементов и вылезания за рамки картинок
     .offer::after, .our-foto__slider::before, .plus-in-video__video::after
@@ -273,13 +287,23 @@ a
         &__left-side img
             right: -120px
             width: 140%
-
         &__video img
             margin-left: auto
             margin-right: 0
 
     .offer
         width: 100%
+    
+    .advantages
+        &__item
+            padding-left: 0
+            padding-right: 0
+        &__icon
+            width: 17%
+        &__title
+            width: 80%
+        &__text
+            width: 80%
 
 @media (max-width: 1199px)
     .header
@@ -319,21 +343,20 @@ a
             margin-right: auto
 
 @media (max-width: 767px)
-    .header__bar
-        .bar
-            &__logo img
-                margin-right: auto
-            &__site-name
-                margin-top: 10px
-                font-size: 23px
-            &__site-subtitle
-                font-size: 12px
-        
-        .call-me
+    .bar
+        &__logo img
+            margin-right: auto
+        &__site-name
             margin-top: 10px
+            font-size: 23px
+        &__site-subtitle
+            font-size: 12px
+        .call-me
+            margin-top: 15px
             padding: 0
-            &__phone, &__text
-                font-size: 12px
+            font-size: 14px
+            &__icon, &__arrow
+                display: none
     .offer
         max-width: 500px
         &::before
@@ -343,24 +366,24 @@ a
             left: 0
 
 @media (max-width: 575px)
-    .header__bar
+    .bar
         height: 80px
-        .bar__logo
-            // height: 80px
-        .bar__site-name
+        &__site-name
             margin-top: 15px
-        .bar__site-subtitle
+            margin-left: -15px
+        &__site-subtitle
             display: none
         .call-me
             padding: 0 15px
             margin-left: auto
-            margin-right: 0
+            margin-right: 15px
             margin-top: -40px
             text-align: left
         .call-me__phone
             font-size: 12px
         .call-me__request
             display: none
+            
 
     .header__title
         font-size: 35px
@@ -409,7 +432,8 @@ a
         padding-top: 35px
         padding-bottom: 25px
         &__title
-            font-size: 22px
+            font-size: 28px
+            font-weight: 500
             text-transform: none
         &__subtitle-image
             margin-bottom: 10px
@@ -417,3 +441,15 @@ a
     .our-foto
         &__text
             font-size: 14px
+
+    .advantages
+        text-align: center
+        &__icon
+            width: 30%
+            float: none
+        &__title
+            font-size: 20px
+            font-weight: normal
+        &__title, &__text
+            width: auto
+            margin-left: auto
