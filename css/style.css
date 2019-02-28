@@ -6,11 +6,19 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 @font-face {
   font-family: 'Nokia';
   src: url("/fonts/Nokia-Sans-S60-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+header {
+  padding-bottom: 70px;
 }
 
 .header__bar {
@@ -61,7 +69,8 @@ body {
 }
 
 .header__bar .call-me__phone_big {
-  font-size: 1.5em;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
 .header__bar .call-me__request {
@@ -158,8 +167,8 @@ body {
 .offer__title {
   text-align: center;
   color: #fdf1cf;
-  font-family: "Roboto Condensed";
-  font-size: 18px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 16px;
   text-transform: uppercase;
 }
 
@@ -213,10 +222,8 @@ body {
 }
 
 .offer-confident {
-  margin-top: 15px;
+  margin: 15px auto 10px;
   height: 30px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
 }
 
@@ -234,6 +241,62 @@ body {
   font-size: 11px;
   font-weight: 400;
   width: 77%;
+}
+
+.our-foto {
+  background-color: #f3e2b6;
+}
+
+.our-foto__text {
+  color: #1b1b1b;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 30px;
+}
+
+.our-foto__slider {
+  position: relative;
+  z-index: 2;
+}
+
+.our-foto__slider::before {
+  position: absolute;
+  content: url("/img/slider-back-grains-1.png");
+  z-index: -1;
+  bottom: 5px;
+  right: -10px;
+}
+
+.our-foto__slider img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.section__title {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1b1b1b;
+  font-family: "Roboto Condensed";
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.section__subtitle-image {
+  display: block;
+  margin: 7px auto 20px;
+  height: 20px;
+  background: url("/img/subtitle-logo.png") no-repeat center center;
+  background-size: 40px;
 }
 
 @media (max-width: 1199px) {
@@ -260,6 +323,16 @@ body {
     width: 500px;
     display: block;
     margin-left: auto;
+    margin-right: auto;
+  }
+  .our-foto__text {
+    margin-top: 20px;
+  }
+  .our-foto__slider::before {
+    position: auto;
+    content: none;
+  }
+  .our-foto__slider img {
     margin-right: auto;
   }
 }
@@ -295,17 +368,26 @@ body {
 
 @media (max-width: 575px) {
   .header__bar {
-    height: 130px;
+    height: 80px;
   }
-  .header__bar .bar__logo {
-    height: 130px;
+  .header__bar .bar__site-name {
+    margin-top: 15px;
+  }
+  .header__bar .bar__site-subtitle {
+    display: none;
   }
   .header__bar .call-me {
     padding: 0 15px;
     margin-left: auto;
     margin-right: 0;
-    margin-top: -65px;
+    margin-top: -40px;
     text-align: left;
+  }
+  .header__bar .call-me__phone {
+    font-size: 12px;
+  }
+  .header__bar .call-me__request {
+    display: none;
   }
   .header__title {
     font-size: 35px;
@@ -317,25 +399,54 @@ body {
   .offer {
     width: 97%;
   }
+  .section {
+    padding-bottom: 40px;
+  }
+  .section__title {
+    font-size: 25px;
+  }
 }
 
 @media (max-width: 479px) {
   .header__bar {
-    height: 90px;
+    height: 75px;
   }
   .header__bar .bar__logo {
-    height: 90px;
+    height: 75px;
+  }
+  .header__bar .bar__logo img {
+    max-width: 90%;
   }
   .header__bar .bar__site-name {
     margin-top: 15px;
-  }
-  .header__bar .bar__site-subtitle {
-    font-size: 14px;
+    margin-left: -15px;
+    font-size: 20px;
   }
   .header__bar .call-me {
+    padding-left: 0;
+  }
+  .header__bar .call-me__request {
     display: none;
   }
+  .offer-confident {
+    margin-bottom: 0;
+  }
+  .offer-confident__text {
+    margin: 0 auto;
+    width: 100%;
+  }
   .offer-confident img {
-    height: 20px;
+    display: none;
+  }
+  .section {
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+  .section__title {
+    font-size: 22px;
+    text-transform: none;
+  }
+  .our-foto__text {
+    font-size: 14px;
   }
 }

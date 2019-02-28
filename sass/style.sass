@@ -4,6 +4,8 @@ html
     font-family: 'Roboto', sans-serif
 body
     margin: 0
+a
+    text-decoration: none
 
     // Шрифт Nokia для названия сайта в шапке
 @font-face
@@ -12,6 +14,8 @@ body
     font-weight: normal
     font-style: normal
 
+header
+    padding-bottom: 70px
 .header__bar
     background-image: url('/img/back-rect-1-small.png')
     height: 85px
@@ -49,10 +53,12 @@ body
             color: #393939
             font-weight: 400
             font-size: 16px
+            &:hover
+                // border-bottom: 1px dashed #393939
             
         &__phone_big
-            font-size: 1.5em
-            // font-weight: bold
+            font-size: 1.3em
+            font-weight: bold
             
         &__request
             margin-top: -5px
@@ -131,8 +137,8 @@ body
     &__title
         text-align: center
         color: #fdf1cf
-        font-family: "Roboto Condensed"
-        font-size: 18px
+        font-family: "Roboto Condensed", sans-serif
+        font-size: 16px
         text-transform: uppercase
 
     &-form
@@ -174,10 +180,8 @@ body
             background-image: linear-gradient(to top, #03c9a9 0%, #13efcb 100%)
         
     &-confident
-        margin-top: 15px
+        margin: 15px auto 10px
         height: 30px
-        margin-left: auto;
-        margin-right: auto;
         text-align: center;
     &-confident *
         display: inline-block
@@ -192,8 +196,54 @@ body
         font-weight: 400
         width: 77%
 
-    // адаптация псевдоэлементов и вылезания за рамки картинок
+.our-foto
+    background-color: #f3e2b6
+    // background-image: url('/img/slider-back-grains-1.png')
+    // background-repeat: no-repeat
+    // background-position: 50% 0
+    &__text
+        color: #1b1b1b
+        font-family: Roboto
+        font-size: 16px
+        font-weight: 300
+        margin-top: 30px
+
+    &__slider
+        position: relative
+        z-index: 2
+        &::before
+            position: absolute
+            content: url('/img/slider-back-grains-1.png')
+            z-index: -1
+            bottom: 5px
+            right: -10px
+        img
+            max-width: 100%
+            display: block
+            margin-left: auto
+            margin-right: 20px
+
+.section
+    padding-top: 50px
+    padding-bottom: 60px
+    &__title
+        margin-top: 0
+        margin-bottom: 10px
+        text-align: center
+        text-transform: uppercase
+        color: #1b1b1b
+        font-family: "Roboto Condensed"
+        font-size: 32px
+        font-weight: 400
+    &__subtitle-image
+        display: block
+        margin: 7px auto 20px
+        height: 20px
+        background: url('/img/subtitle-logo.png') no-repeat center center
+        background-size: 40px
+    
 @media (max-width: 1199px)
+    // адаптация псевдоэлементов и вылезания за рамки картинок
     .offer::after
         position: relative
         content: ''
@@ -216,6 +266,15 @@ body
         display: block
         margin-left: auto
         margin-right: auto
+    
+    .our-foto
+        &__text
+            margin-top: 20px
+        &__slider::before
+            position: auto
+            content: none
+        &__slider img
+            margin-right: auto
 
 // @media (max-width: 991px)
 
@@ -245,36 +304,67 @@ body
 
 @media (max-width: 575px)
     .header__bar
-        height: 130px
+        height: 80px
         .bar__logo
-            height: 130px
+            // height: 80px
+        .bar__site-name
+            margin-top: 15px
+        .bar__site-subtitle
+            display: none
         .call-me
             padding: 0 15px
             margin-left: auto
             margin-right: 0
-            margin-top: -65px
+            margin-top: -40px
             text-align: left
+        .call-me__phone
+            font-size: 12px
+        .call-me__request
+            display: none
 
     .header__title
         font-size: 35px
     .header__subtitle
         font-size: 16px
         text-transform: none
-
     .offer
         width: 97%
+    .section
+        padding-bottom: 40px
+        &__title
+            font-size: 25px
 
 @media (max-width: 479px)
     .header__bar
-        height: 90px
+        height: 75px
         .bar__logo
-            height: 90px
+            height: 75px
+            img
+                max-width: 90%
         .bar__site-name
             margin-top: 15px
-        .bar__site-subtitle
-            font-size: 14px
+            margin-left: -15px
+            font-size: 20px
         .call-me
+            padding-left: 0
+        .call-me__request
             display: none
     
-    .offer-confident img
-        height: 20px
+    .offer-confident
+        margin-bottom: 0
+        &__text
+            margin: 0 auto
+            width: 100%
+        img
+            display: none
+    
+    .section
+        padding-top: 40px
+        padding-bottom: 30px
+        &__title
+            font-size: 22px
+            text-transform: none
+
+    .our-foto
+        &__text
+            font-size: 14px
