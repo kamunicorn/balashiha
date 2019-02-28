@@ -14,7 +14,7 @@ a
     font-weight: normal
     font-style: normal
 
-header
+.header
     padding-bottom: 70px
 .header__bar
     background-image: url('/img/back-rect-1-small.png')
@@ -131,8 +131,8 @@ header
     &::after
         position: absolute
         content: url('/img/header-grains.png')
-        bottom: 0
-        left: 190px
+        bottom: 10%;
+        left: 240px;
         z-index: -2
     &__title
         text-align: center
@@ -194,13 +194,29 @@ header
         color: #ffffff
         font-size: 11px
         font-weight: 400
-        width: 77%
+        width: 75%
+
+.section
+    padding-top: 50px
+    padding-bottom: 60px
+    &__title
+        margin-top: 0
+        margin-bottom: 10px
+        text-align: center
+        text-transform: uppercase
+        color: #1b1b1b
+        font-family: "Roboto Condensed"
+        font-size: 32px
+        font-weight: 400
+    &__subtitle-image
+        display: block
+        margin: 7px auto 20px
+        height: 20px
+        background: url('/img/subtitle-logo.png') no-repeat center center
+        background-size: 40px
 
 .our-foto
     background-color: #f3e2b6
-    // background-image: url('/img/slider-back-grains-1.png')
-    // background-repeat: no-repeat
-    // background-position: 50% 0
     &__text
         color: #1b1b1b
         font-family: Roboto
@@ -223,46 +239,62 @@ header
             margin-left: auto
             margin-right: 20px
 
-.section
-    padding-top: 50px
-    padding-bottom: 60px
-    &__title
-        margin-top: 0
-        margin-bottom: 10px
-        text-align: center
-        text-transform: uppercase
-        color: #1b1b1b
-        font-family: "Roboto Condensed"
-        font-size: 32px
-        font-weight: 400
-    &__subtitle-image
-        display: block
-        margin: 7px auto 20px
-        height: 20px
-        background: url('/img/subtitle-logo.png') no-repeat center center
-        background-size: 40px
-    
-@media (max-width: 1199px)
-    // адаптация псевдоэлементов и вылезания за рамки картинок
-    .offer::after
-        position: relative
-        content: ''
-        bottom: 0
-        left: 0
+.plus-in-video
 
+    &__left-side
+        position: relative
+        img
+            position: absolute
+            bottom: -60px
+            right: 0
+            z-index: -1
+
+    &__video
+        position: relative
+        &::after
+            content: url('/img/advantages-grains.png')
+            position: absolute
+            left: 82%
+            bottom: 10%
+            z-index: -1
+        img
+            display: block
+            max-width: 100%
+            border: 3px #fff solid
+            border-radius: 5px
+
+@media (max-width: 1419px)
+    // адаптация псевдоэлементов и вылезания за рамки картинок
+    .offer::after, .our-foto__slider::before, .plus-in-video__video::after
+        position: auto
+        content: none
+
+    .plus-in-video
+        &__left-side img
+            right: -120px
+            width: 140%
+
+        &__video img
+            margin-left: auto
+            margin-right: 0
+
+    .offer
+        width: 100%
+
+@media (max-width: 1199px)
     .header
         &__main-image img
             display: block
             position: relative
             margin-right: auto
             margin-left: auto
-            width: 95%
+            width: 100%
         &__title
             font-size: 45px
         &__subtitle
             font-size: 18px
     .offer
-        width: 500px
+        width: 100%
         display: block
         margin-left: auto
         margin-right: auto
@@ -270,13 +302,21 @@ header
     .our-foto
         &__text
             margin-top: 20px
-        &__slider::before
-            position: auto
-            content: none
         &__slider img
             margin-right: auto
 
-// @media (max-width: 991px)
+    .plus-in-video__left-side img
+        right: -20px
+        width: 120%
+
+@media (max-width: 991px)
+    .offer
+        width: 400px
+    .plus-in-video
+        &__left-side
+            display: none
+        &__video img
+            margin-right: auto
 
 @media (max-width: 767px)
     .header__bar
@@ -335,20 +375,27 @@ header
             font-size: 25px
 
 @media (max-width: 479px)
-    .header__bar
-        height: 75px
-        .bar__logo
-            height: 75px
-            img
-                max-width: 90%
-        .bar__site-name
-            margin-top: 15px
-            margin-left: -15px
-            font-size: 20px
-        .call-me
-            padding-left: 0
-        .call-me__request
+    .header
+        padding-bottom: 40px
+        &__title
+            font-size: 26px
+            margin-top: 25px
+        &__main-image
             display: none
+        &__bar
+            height: 75px
+            .bar__logo
+                height: 75px
+                img
+                    max-width: 90%
+            .bar__site-name
+                margin-top: 15px
+                margin-left: -15px
+                font-size: 20px
+            .call-me
+                padding-left: 0
+            .call-me__request
+                display: none
     
     .offer-confident
         margin-bottom: 0
@@ -359,11 +406,13 @@ header
             display: none
     
     .section
-        padding-top: 40px
-        padding-bottom: 30px
+        padding-top: 35px
+        padding-bottom: 25px
         &__title
             font-size: 22px
             text-transform: none
+        &__subtitle-image
+            margin-bottom: 10px
 
     .our-foto
         &__text
