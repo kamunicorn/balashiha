@@ -7,7 +7,7 @@ body
     margin: 0
 a
     text-decoration: none
-*
+a, button, input
     outline: none
 
     // Шрифт Nokia для названия сайта в шапке
@@ -322,6 +322,27 @@ a
             background-color: $accent
             color: #ffffff
 
+.about
+    background-color: $backBrown
+    .section__subtitle-image
+        margin-bottom: 10px
+    &__text
+        margin-top: 10px
+        margin-bottom: 12px
+
+    &__video
+        text-align: center
+        margin-top: 30px
+        background: url('/img/about-video-back.png') no-repeat center bottom
+        img
+            max-width: 100%
+            margin-left: auto
+            margin-right: auto
+            display: block
+            border-radius: 5px
+            border: 3px solid white
+            width: 450px
+
 .many-bread
     &__row
         width: 100%
@@ -408,6 +429,9 @@ a
         &__video img
             margin-right: auto
 
+    .about__video
+        background-size: contain
+
 @media (max-width: 767px)
     .bar
         &__logo img
@@ -430,6 +454,11 @@ a
             content: ''
             bottom: 0
             left: 0
+
+    .about__video
+        background: none
+        img
+            width: 100%
 
     .many-bread__item
         width: 25%
@@ -454,7 +483,6 @@ a
             font-size: 12px
         .call-me__request
             display: none
-            
 
     .header__title
         font-size: 35px
@@ -463,6 +491,9 @@ a
         text-transform: none
     .offer
         width: 97%
+
+    .about__video
+        margin-top: 15px
     .section
         padding-bottom: 40px
         &__title
