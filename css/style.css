@@ -455,6 +455,12 @@ a, button, input {
   width: 450px;
 }
 
+.many-bread {
+  height: auto;
+  margin-bottom: -5px;
+  display: inline-block;
+}
+
 .many-bread__row {
   width: 100%;
 }
@@ -477,6 +483,23 @@ a, button, input {
 .many-bread__item img:hover {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
+}
+
+footer {
+  padding-top: 35px;
+  padding-bottom: 40px;
+  min-height: 150px;
+  background-color: #363636;
+  color: #fefefe;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+}
+
+footer img {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 1419px) {
