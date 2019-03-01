@@ -345,8 +345,6 @@ a, button, input
 
 .many-bread
     height: auto
-    margin-bottom: -5px
-    display: inline-block
     &__row
         width: 100%
     &__item
@@ -362,9 +360,20 @@ a, button, input
             &:hover
                 filter: grayscale(0%)
 
+.map
+    width: 100%
+    height: 500px
+    background: url('/img/map.png') center center no-repeat
+    background-size: cover
+    display: inline-block
+    img
+        width: 100%
+        display: none
+
 footer
     padding-top: 35px
     padding-bottom: 40px
+    margin-top: -5px
     min-height: 150px
     background-color: #363636
     color: #fefefe
@@ -437,6 +446,9 @@ footer
         &:last-child
             display: none
 
+    .map
+        height: 400px
+
 @media (max-width: 991px)
     .offer
         width: 400px
@@ -481,6 +493,9 @@ footer
         width: 25%
         &:first-child
             display: none
+
+    .map
+        height: 350px
 
 @media (max-width: 575px)
     .bar
@@ -577,3 +592,6 @@ footer
         width: 33.33%
         &:nth-child(2)
             display: none
+
+    .map
+        height: 250px
