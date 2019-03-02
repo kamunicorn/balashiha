@@ -65,15 +65,15 @@
                 </div>
 
                 <div class="col-lg-4 col-md-12">
-                    <div class="offer">
-                        <p class="offer__title">Получите персональное коммерческое предложение</p>
+                    <div class="top-offer offer">
+                        <p class="top-offer__title">Получите персональное коммерческое предложение</p>
 
                         <form action="" method="post" class="offer-form">
-                            <input type="text" class="offer-form__name" placeholder="Ваше имя">
-                            <input type="mail" class="offer-form__mail" placeholder="Ваш электронный адрес">
-                            <input type="tel" class="offer-form__phone" placeholder="Ваш номер телефона">
+                            <input type="text" class="offer__name" placeholder="Ваше имя">
+                            <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес">
+                            <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
                             
-                            <button type="submit" class="offer-form__submit">Получить КП!</button> 
+                            <button type="submit" class="offer__submit">Получить КП!</button> 
                         </form>
 
                         <div class="offer-confident">
@@ -102,7 +102,9 @@
             
             <div class="row">
                 <div class="our-foto__slider col-xl-7 col-lg-6">
-                    <img src="/img/slider.png" alt="">
+                    <div class="shadow-bottom">
+                        <img src="/img/slider.png" alt="">
+                    </div>
                 </div>
                 <div class="col-xl-5 col-lg-6">
                         <p class="our-foto__text">Мы изготавливаем хлеб на ОАО «Балашиха Хлеб». Это одно из крупнейших предприятий пищевой промышленности Московского региона, входящее в тройку ведущих производителей хлебобулочной продукции.</p>
@@ -263,6 +265,32 @@
     </section>
     <!-- /.section.about -->
 
+    <!-- Получите персональное предложение -->
+    <section class="section offer middle-offer">
+        <div class="container">
+            <h3 class="section__title">Получите персональное предложение</h3>
+            <div class="section__subtitle-image"></div>
+
+            <div class="middle-offer__form">
+                <form action="" method="post">
+                    <input type="text" class="offer__name" placeholder="Ваше имя">
+                    <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес">
+                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
+                    
+                    <button type="submit" class="offer__submit">Получить сейчас!</button> 
+                </form>
+            </div>
+
+            <div class="offer-confident">
+                <img src="img/icon-confident.png" alt="Конфиденциально">
+                <p class="offer-confident__text">Ваши данные не будут переданы третьим лицам, согласно законам РФ</p>
+                <img src="img/icon-confident.png" alt="Конфиденциально">
+            </div>
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.section middle-offer -->
+    
     <!-- Полоска с фотографиями хлеба (просто для красоты) -->
     <section class="many-bread">
         <div class="many-bread__row">
