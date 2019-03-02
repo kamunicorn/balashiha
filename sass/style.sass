@@ -163,14 +163,14 @@ a, button, input
     padding: 10px 20px 20px
     position: relative
     
+    // &::before
+    //     position: absolute
+    //     content: url('/img/header-offer-shadow.png')
+    //     bottom: -8px
+    //     left: 50%
+    //     transform: translateX(-50%)
+    //     z-index: -1
     &::before
-        position: absolute
-        content: url('/img/header-offer-shadow.png')
-        bottom: -8px
-        left: 50%
-        transform: translateX(-50%)
-        z-index: -1
-    &::after
         position: absolute
         height: 300px
         width: 18vw
@@ -255,6 +255,7 @@ a, button, input
             bottom: 5px
             right: -10px
         img
+            border: 5px solid white
             max-width: 100%
 
 .plus-in-video
@@ -415,25 +416,32 @@ footer
     position: relative
     display: inline-block
     width: fit-content
+    // &::after
+    //     position: absolute
+    //     content: ''
+    //     z-index: -1
+    //     width: 109%
+    //     height: 80px
+    //     bottom: 5px
+    //     left: 50%
+    //     transform: translateX(-50%)
+    //     background: url('/img/shadow-left.png') left bottom no-repeat, url('/img/shadow-right.png') right bottom no-repeat
     &::before
         position: absolute
         content: url('/img/shadow-left.png')
         bottom: 0
-        right: 100%
-        width: 30px
-        // z-index: -1
+        left: -25px
+        z-index: 0
     &::after
         position: absolute
         content: url('/img/shadow-right.png')
         bottom: 0
-        left: 99.5%
-        width: 30px
-        // z-index: -1
+        right: -25px
+        z-index: 0
 
 @media (max-width: 1419px)
     // адаптация псевдоэлементов и вылезания за рамки картинок
-    .top-offer::after, .our-foto__slider::before, .plus-in-video__video::after
-        position: auto
+    .top-offer::before, .our-foto__slider::before, .plus-in-video__video::after
         content: none
 
     .top-offer
@@ -497,6 +505,7 @@ footer
 @media (max-width: 991px)
     .top-offer
         width: 320px
+
     .middle-offer form input
         display: block
         margin: 0px auto 12px
@@ -506,6 +515,11 @@ footer
             display: none
         &__video img
             margin-right: auto
+
+    .our-foto__slider, .plus-in-video__video, .header__offer
+        text-align: center
+        padding-right: 15px
+        padding-left: 15px
 
     .about__video
         background-size: contain
@@ -544,6 +558,8 @@ footer
         height: 350px
 
 @media (max-width: 575px)
+    .shadow-bottom::after, .shadow-bottom::before
+        content: none
     .bar
         height: 80px
         &__site-name
