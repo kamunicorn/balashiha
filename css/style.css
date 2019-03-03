@@ -176,8 +176,10 @@ a, button, input {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  -webkit-transition: .9s;
-  transition: .9s;
+  -webkit-transition: -webkit-box-shadow .9s;
+  transition: -webkit-box-shadow .9s;
+  transition: box-shadow .9s;
+  transition: box-shadow .9s, -webkit-box-shadow .9s;
   -webkit-box-shadow: 0 -30px 40px 0 #029678 inset;
           box-shadow: 0 -30px 40px 0 #029678 inset;
   background-color: #13efcb;
@@ -310,7 +312,7 @@ a, button, input {
 }
 
 .our-foto {
-  background-color: #fcf2d1;
+  background-color: #fdf1cf;
 }
 
 .our-foto__text {
@@ -367,12 +369,12 @@ a, button, input {
 .plus-in-video__video img {
   display: block;
   max-width: 100%;
-  border: 3px #fff solid;
+  border: 3px #fdf1cf solid;
   border-radius: 5px;
 }
 
 .advantages {
-  background-color: #fcf2d1;
+  background-color: #fdf1cf;
 }
 
 .advantages__item {
@@ -465,7 +467,7 @@ a, button, input {
 }
 
 .about {
-  background-color: #fcf2d1;
+  background-color: #fdf1cf;
 }
 
 .about .section__subtitle-image {

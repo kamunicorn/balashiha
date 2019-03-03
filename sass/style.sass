@@ -1,5 +1,7 @@
-$accent: #f64747
+$accentRed: #f64747
 $backBrown: #fcf2d1
+$accentLight: #fdf1cf
+$backBrown: $accentLight
 
 html
     font-family: 'Roboto', sans-serif
@@ -42,7 +44,7 @@ a, button, input
         font-family: Roboto
         font-size: 14px
         font-weight: 300
-        color: $accent
+        color: $accentRed
 
     .call-me
         text-align: right
@@ -64,13 +66,13 @@ a, button, input
         &__icon
             width: 15px
         &__arrow
-            color: $accent
+            color: $accentRed
             font-size: 20px
         &__text
             font-size: 14px
             font-weight: 300
-            color: $accent
-            border-bottom: 1px dashed $accent
+            color: $accentRed
+            border-bottom: 1px dashed $accentRed
             &:hover
                 border-style: none
                 cursor: pointer
@@ -133,7 +135,7 @@ a, button, input
         font-size: 18px
         font-weight: 600
         text-transform: uppercase
-        transition: .9s
+        transition: box-shadow .9s
         box-shadow: 0 -30px 40px 0 rgba(2,150,120,1) inset
         background-color: #13efcb
         &:hover
@@ -158,18 +160,11 @@ a, button, input
 
 .top-offer
     width: 315px
-    border: 5px solid #fdf1cf
-    background-color: $accent
+    border: 5px solid $accentLight
+    background-color: $accentRed
     padding: 10px 20px 20px
     position: relative
     
-    // &::before
-    //     position: absolute
-    //     content: url('../img/header-offer-shadow.png')
-    //     bottom: -8px
-    //     left: 50%
-    //     transform: translateX(-50%)
-    //     z-index: -1
     &::before
         position: absolute
         height: 300px
@@ -182,7 +177,7 @@ a, button, input
         z-index: -2
     &__title
         text-align: center
-        color: #fdf1cf
+        color: $accentLight
         font-family: 'Roboto Condensed', 'Roboto', sans-serif
         font-size: 16px
         text-transform: uppercase
@@ -279,7 +274,7 @@ a, button, input
         img
             display: block
             max-width: 100%
-            border: 3px #fff solid
+            border: 3px $accentLight solid
             border-radius: 5px
 
 .advantages
@@ -339,14 +334,14 @@ a, button, input
         padding: 15px 20px
         margin-top: 5px
         background-color: transparent
-        border: 1px solid $accent
-        color: $accent
+        border: 1px solid $accentRed
+        color: $accentRed
         font-size: 14px
         font-weight: bold
         text-transform: uppercase
         transition: .4s
         &:hover
-            background-color: $accent
+            background-color: $accentRed
             color: #ffffff
 
 .about
