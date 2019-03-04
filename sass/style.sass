@@ -263,19 +263,25 @@ a, button, input
             right: 0
             z-index: -1
 
-    &__video
+    &__video-block
         position: relative
         &::after
             content: url('../img/advantages-grains.png')
             position: absolute
-            left: 82%
+            left: 81%
             bottom: 10%
             z-index: -1
-        img
-            display: block
-            max-width: 100%
-            border: 3px $accentLight solid
-            border-radius: 5px
+    // &__video-item // youtube
+    //     box-sizing: content-box
+    //     width: 600px
+    //     height: 400px
+    //     border: 3px $accentLight solid
+    //     border-radius: 5px
+    &__video-item // тег video
+        width: 600px
+        height: 450px
+        border: 3px $accentLight solid
+        border-radius: 5px
 
 .advantages
     background-color: $backBrown
@@ -352,18 +358,15 @@ a, button, input
         margin-top: 10px
         margin-bottom: 12px
 
-    &__video
+    &__video-block
         text-align: center
         margin-top: 30px
         background: url('../img/about-video-back.png') no-repeat center bottom
-        img
-            max-width: 100%
-            margin-left: auto
-            margin-right: auto
-            display: block
-            border-radius: 5px
-            border: 3px solid white
-            width: 450px
+    &__video-item
+        width: 600px
+        height: 450px
+        border: 3px $accentLight solid
+        border-radius: 5px
 
 .many-bread
     &__item
@@ -384,9 +387,6 @@ a, button, input
     //     object-fit: cover
 
 .placemark
-    // max-width: 400px
-    // min-width: 100px
-    // width: 30vw
     color: #363636
     padding-top: 15px
     padding-bottom: 10px
@@ -394,7 +394,6 @@ a, button, input
     &__image
         display: inline-block
         width: 33%
-        // height: 95px
         img
             width: 100%
     &__info
@@ -448,7 +447,7 @@ footer
 
 @media (max-width: 1419px)
     // адаптация псевдоэлементов и вылезания за рамки картинок
-    .top-offer::before, .our-foto__slider::before, .plus-in-video__video::after
+    .top-offer::before, .our-foto__slider::before, .plus-in-video__video-block::after
         content: none
 
     .top-offer
@@ -458,9 +457,8 @@ footer
         &__left-side img
             right: -120px
             width: 140%
-        &__video img
-            margin-left: auto
-            margin-right: 0
+        &__video-block
+            text-align: center
 
     .advantages
         &__item
@@ -500,6 +498,10 @@ footer
     .plus-in-video__left-side img
         right: -20px
         width: 120%
+    .plus-in-video, .about-video
+        &__video-item
+            width: 52vw
+            height: 39vw
 
     .many-bread__item:nth-child(3n)
         display: none
@@ -517,15 +519,19 @@ footer
     .plus-in-video
         &__left-side
             display: none
-        &__video img
-            margin-right: auto
+        &__video-block
+            text-align: center
+    .about__video, .plus-in-video
+        &__video-item
+            width: 80vw
+            height: 50vw
 
-    .our-foto__slider, .plus-in-video__video, .header__offer
+    .our-foto__slider, .plus-in-video__video-block, .header__offer
         text-align: center
         padding-right: 15px
         padding-left: 15px
 
-    .about__video
+    .about__video-block
         background-size: contain
 
 @media (max-width: 767px)
@@ -548,10 +554,14 @@ footer
         &::before
             content: none
 
-    .about__video
+    .plus-in-video, .about
+        &__video-item
+            width: 90vw
+            height: 65vw
+    .about__video-block
         background: none
-        img
-            width: 100%
+        &-item
+            // width: 100%
 
     .many-bread__item:nth-child(3n)
         display: block
@@ -596,7 +606,7 @@ footer
         font-size: 16px
         text-transform: none
 
-    .about__video
+    .about__video-block
         margin-top: 15px
     .section
         padding-bottom: 40px
