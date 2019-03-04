@@ -142,7 +142,7 @@ a, button, input
             box-shadow: 0 -40px 50px 0 rgba(2,174,149,.05) inset
 
     &-confident
-        margin: 15px auto 10px
+        margin: 15px auto 0
         height: 30px
         text-align: center
         *
@@ -378,12 +378,42 @@ a, button, input
 .map
     width: 100%
     height: 500px
-    background: url('../img/map.png') center center no-repeat
-    background-size: cover
-    display: block
-    img
-        width: 100%
-        display: none
+    // img
+    //     width: 100%
+    //     height: 100%
+    //     object-fit: cover
+
+.placemark
+    // max-width: 400px
+    // min-width: 100px
+    // width: 30vw
+    color: #363636
+    padding-top: 15px
+    padding-bottom: 10px
+    
+    &__image
+        display: inline-block
+        width: 33%
+        // height: 95px
+        img
+            width: 100%
+    &__info
+        width: 63%
+        font-size: 16px
+        font-weight: 300
+        display: inline-block
+        margin-left: 4%
+    &__title
+        font-weight: bold
+        text-transform: uppercase
+    &__text
+        margin-top: 10px
+        margin-bottom: 0
+    &__tel
+        color: #363636
+    &__mail
+        color: $accentRed
+        text-decoration: underline
 
 footer
     padding-top: 35px
@@ -531,6 +561,14 @@ footer
     .map
         height: 350px
 
+    .placemark
+        &__image
+            width: 30%
+        &__info
+            width: 67%
+            font-size: 13px
+            margin-left: 3%
+
 @media (max-width: 575px)
     .shadow-bottom::after, .shadow-bottom::before
         content: none
@@ -564,6 +602,11 @@ footer
         padding-bottom: 40px
         &__title
             font-size: 25px
+
+    .placemark__info
+        width: 64%
+        font-size: 12px
+        margin-left: 3%
 
 @media (max-width: 479px)
     .header
@@ -626,10 +669,14 @@ footer
             width: auto
             margin-left: auto
 
-    // .many-bread__item
-    //     width: 33.33%
-    //     &:nth-child(2)
-    //         display: none
-
     .map
         height: 250px
+    .placemark
+        padding: 0
+        &__image
+            width: 27%
+        &__text
+            margin-top: 5px
+        &__info
+            width: 68%
+            

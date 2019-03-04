@@ -191,7 +191,7 @@ a, button, input {
 }
 
 .offer-confident {
-  margin: 15px auto 10px;
+  margin: 15px auto 0;
   height: 30px;
   text-align: center;
 }
@@ -515,14 +515,48 @@ a, button, input {
 .map {
   width: 100%;
   height: 500px;
-  background: url("../img/map.png") center center no-repeat;
-  background-size: cover;
-  display: block;
 }
 
-.map img {
+.placemark {
+  color: #363636;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.placemark__image {
+  display: inline-block;
+  width: 33%;
+}
+
+.placemark__image img {
   width: 100%;
-  display: none;
+}
+
+.placemark__info {
+  width: 63%;
+  font-size: 16px;
+  font-weight: 300;
+  display: inline-block;
+  margin-left: 4%;
+}
+
+.placemark__title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.placemark__text {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.placemark__tel {
+  color: #363636;
+}
+
+.placemark__mail {
+  color: #f64747;
+  text-decoration: underline;
 }
 
 footer {
@@ -698,6 +732,14 @@ footer img {
   .map {
     height: 350px;
   }
+  .placemark__image {
+    width: 30%;
+  }
+  .placemark__info {
+    width: 67%;
+    font-size: 13px;
+    margin-left: 3%;
+  }
 }
 
 @media (max-width: 575px) {
@@ -742,6 +784,11 @@ footer img {
   }
   .section__title {
     font-size: 25px;
+  }
+  .placemark__info {
+    width: 64%;
+    font-size: 12px;
+    margin-left: 3%;
   }
 }
 
@@ -824,5 +871,17 @@ footer img {
   }
   .map {
     height: 250px;
+  }
+  .placemark {
+    padding: 0;
+  }
+  .placemark__image {
+    width: 27%;
+  }
+  .placemark__text {
+    margin-top: 5px;
+  }
+  .placemark__info {
+    width: 68%;
   }
 }
