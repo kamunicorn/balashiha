@@ -236,9 +236,10 @@ a, button, input
         font-family: Roboto
         font-size: 16px
         font-weight: 300
-        margin-top: 30px
+        margin-bottom: 30px
+        margin-top: 10px
 
-    &__slider
+    &__left-side
         position: relative
         z-index: 2
         text-align: right
@@ -252,7 +253,65 @@ a, button, input
         img
             border: 5px solid white
             max-width: 100%
+    
+    .slider
+        width: 550px
+        height: 320px
+        margin-left: auto
+        margin-right: 0
+        &__item
+            margin-left: auto
+            margin-right: auto
+            width: 550px
+            height: 320px
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover   
+        &__dots
+            list-style: none
+            position: absolute
+            bottom: 0px
+            left: 50%
+            transform: translateX(-50%)
+            background-color: rgba(0,0,0,.5)
+            text-align: center
+            padding: 3px 20px
+            border-radius: 3px
+            width: 160px
+            li
+                display: inline
+                margin: 0 4px
+            button
+                color: #fff
+                background-color: #fff
+                font-size: 10.5px
+                border: none
+                height: 12px
+                width: 12px
+            .slick-active button
+                color: $accentRed
+                background-color: $accentRed
 
+        &__arrow
+            position: absolute
+            z-index: 99
+            width: 23px
+            height: 23px
+            border: none
+            padding-top: 5px
+            padding-bottom: 5px
+            bottom: 18px
+        &__prev
+            left: 50%
+            transform: translateX(-80px)
+            background: url(../img/arrow-prev.png) center no-repeat
+            
+        &__next
+            right: 50%
+            transform: translateX(80px)
+            background: url(../img/arrow-next.png) center no-repeat
+            
 .plus-in-video
 
     &__left-side
@@ -381,10 +440,6 @@ a, button, input
 .map
     width: 100%
     height: 500px
-    // img
-    //     width: 100%
-    //     height: 100%
-    //     object-fit: cover
 
 .placemark
     color: #363636
@@ -447,7 +502,7 @@ footer
 
 @media (max-width: 1419px)
     // адаптация псевдоэлементов и вылезания за рамки картинок
-    .top-offer::before, .our-foto__slider::before, .plus-in-video__video-block::after
+    .top-offer::before, .our-foto__left-side::before, .plus-in-video__video-block::after
         content: none
 
     .top-offer
@@ -490,10 +545,15 @@ footer
         margin-right: auto
     
     .our-foto
+        &__left-side
+            padding-right: 15px
         &__text
-            margin-top: 20px
-        &__slider img
-            margin-right: auto
+            margin-bottom: 20px
+        .slider, .slider__item
+            width: 400px
+            height: 235px
+        .slider
+            max-width: 100%
 
     .plus-in-video__left-side img
         right: -20px
@@ -526,7 +586,16 @@ footer
             width: 80vw
             height: 50vw
 
-    .our-foto__slider, .plus-in-video__video-block, .header__offer
+    .our-foto
+        &__text:first-child
+            margin-top: 20px
+        .slider, .slider__item
+            width: 550px
+            height: 320px
+        .slider
+            margin-right: auto
+
+    .our-foto__left-side, .plus-in-video__video-block, .header__offer
         text-align: center
         padding-right: 15px
         padding-left: 15px
@@ -554,14 +623,17 @@ footer
         &::before
             content: none
 
+    .our-foto 
+        .slider, .slider__item
+            width: 510px
+            height: 290px
+
     .plus-in-video, .about
         &__video-item
             width: 90vw
             height: 65vw
     .about__video-block
         background: none
-        &-item
-            // width: 100%
 
     .many-bread__item:nth-child(3n)
         display: block
@@ -605,6 +677,11 @@ footer
     .header__subtitle
         font-size: 16px
         text-transform: none
+
+    .our-foto
+        .slider, .slider__item
+            width: 430px
+            height: 260px
 
     .about__video-block
         margin-top: 15px
@@ -666,6 +743,19 @@ footer
     .our-foto
         &__text
             font-size: 14px
+        .slider, .slider__item
+            width: 290px
+            height: 200px
+        .slider__dots
+            bottom: -5px
+            li
+                font-size: 12px
+            button
+                height: 11px
+                width: 11px
+                padding: 0
+        .slider__arrow
+            bottom: 13px
 
     .advantages
         text-align: center
@@ -689,4 +779,3 @@ footer
             margin-top: 5px
         &__info
             width: 68%
-            

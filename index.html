@@ -19,10 +19,14 @@
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <script type="text/javascript" src="flowplay/flowplayer-3.2.2.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=9c0254fc-b560-4b57-9b85-d3b36ca89ee5" type="text/javascript"></script>
     <script src="js/playerjs.js" type="text/javascript"></script>
-    
+
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick.css"/> -->
+    <!-- Add the new slick-theme.css if you want the default styling -->
+    <!-- <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
 </head>
 <body>
 
@@ -107,9 +111,17 @@
             <div class="section__subtitle-image"></div>
             
             <div class="row">
-                <div class="our-foto__slider col-xl-7 col-lg-6">
+                <div class="our-foto__left-side col-xl-7 col-lg-6">
                     <div class="shadow-bottom">
-                        <img src="img/slider.png" alt="">
+                        <div class="slider">
+                            <div class="slider__item"><img src="img/our-foto/foto-1.jpg" alt="Фото с завода"></div>
+                            <div class="slider__item"><img src="img/our-foto/foto-2.jpg" alt="Фото с завода"></div>
+                            <div class="slider__item"><img src="img/our-foto/foto-3.jpg" alt="Фото с завода"></div>
+                            <div class="slider__item"><img src="img/our-foto/foto-4.jpg" alt="Фото с завода"></div>
+                            <div class="slider__item"><img src="img/our-foto/foto-6.jpg" alt="Фото с завода"></div>
+                            <div class="slider__item"><img src="img/our-foto/foto-6.jpg" alt="Фото с завода"></div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-6">
@@ -355,7 +367,10 @@
     </footer>
     <!-- /footer -->
 
+    <!-- Яндекс карты -->
     <script src="js/map.js"></script>
+
+    <!-- Видеоплеер playerjs -->
     <script>
         let player1 = new Playerjs({
             id: 'video-advantages',
@@ -367,7 +382,31 @@
             file: 'video/1.mp4',
             poster: 'img/video-preview-2.png'
         });
-     </script>
+    </script>
+
+    <!-- slick slider -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.our-foto .slider').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                // autoplay: true,
+                infinite: true,
+                autoplaySpeed: 3000,
+                adaptiveHeight: false,
+                dots: true,
+                dotsClass: 'slider__dots',
+                fade: true,
+                prevArrow: '<button class="slider__prev slider__arrow"></button>',
+                nextArrow: '<button class="slider__next slider__arrow"></button>'
+            });
+        });
+
+
+    </script>
 </body>
 
 </html>

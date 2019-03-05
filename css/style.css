@@ -320,17 +320,18 @@ a, button, input {
   font-family: Roboto;
   font-size: 16px;
   font-weight: 300;
-  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
-.our-foto__slider {
+.our-foto__left-side {
   position: relative;
   z-index: 2;
   text-align: right;
   padding-right: 20px;
 }
 
-.our-foto__slider::before {
+.our-foto__left-side::before {
   position: absolute;
   content: url("../img/slider-back-grains-1.png");
   z-index: -1;
@@ -338,9 +339,88 @@ a, button, input {
   right: -10px;
 }
 
-.our-foto__slider img {
+.our-foto__left-side img {
   border: 5px solid white;
   max-width: 100%;
+}
+
+.our-foto .slider {
+  width: 550px;
+  height: 320px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.our-foto .slider__item {
+  margin-left: auto;
+  margin-right: auto;
+  width: 550px;
+  height: 320px;
+}
+
+.our-foto .slider__item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.our-foto .slider__dots {
+  list-style: none;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 3px 20px;
+  border-radius: 3px;
+  width: 160px;
+}
+
+.our-foto .slider__dots li {
+  display: inline;
+  margin: 0 4px;
+}
+
+.our-foto .slider__dots button {
+  color: #fff;
+  background-color: #fff;
+  font-size: 10.5px;
+  border: none;
+  height: 12px;
+  width: 12px;
+}
+
+.our-foto .slider__dots .slick-active button {
+  color: #f64747;
+  background-color: #f64747;
+}
+
+.our-foto .slider__arrow {
+  position: absolute;
+  z-index: 99;
+  width: 23px;
+  height: 23px;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  bottom: 18px;
+}
+
+.our-foto .slider__prev {
+  left: 50%;
+  -webkit-transform: translateX(-80px);
+          transform: translateX(-80px);
+  background: url(../img/arrow-prev.png) center no-repeat;
+}
+
+.our-foto .slider__next {
+  right: 50%;
+  -webkit-transform: translateX(80px);
+          transform: translateX(80px);
+  background: url(../img/arrow-next.png) center no-repeat;
 }
 
 .plus-in-video__left-side {
@@ -598,7 +678,7 @@ footer img {
 }
 
 @media (max-width: 1419px) {
-  .top-offer::before, .our-foto__slider::before, .plus-in-video__video-block::after {
+  .top-offer::before, .our-foto__left-side::before, .plus-in-video__video-block::after {
     content: none;
   }
   .top-offer {
@@ -646,11 +726,18 @@ footer img {
     margin-left: auto;
     margin-right: auto;
   }
-  .our-foto__text {
-    margin-top: 20px;
+  .our-foto__left-side {
+    padding-right: 15px;
   }
-  .our-foto__slider img {
-    margin-right: auto;
+  .our-foto__text {
+    margin-bottom: 20px;
+  }
+  .our-foto .slider, .our-foto .slider__item {
+    width: 400px;
+    height: 235px;
+  }
+  .our-foto .slider {
+    max-width: 100%;
   }
   .plus-in-video__left-side img {
     right: -20px;
@@ -686,7 +773,17 @@ footer img {
     width: 80vw;
     height: 50vw;
   }
-  .our-foto__slider, .plus-in-video__video-block, .header__offer {
+  .our-foto__text:first-child {
+    margin-top: 20px;
+  }
+  .our-foto .slider, .our-foto .slider__item {
+    width: 550px;
+    height: 320px;
+  }
+  .our-foto .slider {
+    margin-right: auto;
+  }
+  .our-foto__left-side, .plus-in-video__video-block, .header__offer {
     text-align: center;
     padding-right: 15px;
     padding-left: 15px;
@@ -720,6 +817,10 @@ footer img {
   }
   .top-offer::before {
     content: none;
+  }
+  .our-foto .slider, .our-foto .slider__item {
+    width: 510px;
+    height: 290px;
   }
   .plus-in-video__video-item, .about__video-item {
     width: 90vw;
@@ -780,6 +881,10 @@ footer img {
   .header__subtitle {
     font-size: 16px;
     text-transform: none;
+  }
+  .our-foto .slider, .our-foto .slider__item {
+    width: 430px;
+    height: 260px;
   }
   .about__video-block {
     margin-top: 15px;
@@ -858,6 +963,24 @@ footer img {
   }
   .our-foto__text {
     font-size: 14px;
+  }
+  .our-foto .slider, .our-foto .slider__item {
+    width: 290px;
+    height: 200px;
+  }
+  .our-foto .slider__dots {
+    bottom: -5px;
+  }
+  .our-foto .slider__dots li {
+    font-size: 12px;
+  }
+  .our-foto .slider__dots button {
+    height: 11px;
+    width: 11px;
+    padding: 0;
+  }
+  .our-foto .slider__arrow {
+    bottom: 13px;
   }
   .advantages {
     text-align: center;
