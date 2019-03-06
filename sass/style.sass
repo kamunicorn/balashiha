@@ -2,6 +2,7 @@ $accentRed: #f64747
 $backBrown: #fcf2d1
 $accentLight: #fdf1cf
 $backBrown: $accentLight
+$textDark: #1b1b1b
 
 html
     font-family: 'Roboto', sans-serif
@@ -218,7 +219,7 @@ a, button, input
         margin-bottom: 10px
         text-align: center
         text-transform: uppercase
-        color: #1b1b1b
+        color: $textDark
         font-family: 'Roboto Condensed', 'Roboto', sans-serif
         font-size: 32px
         font-weight: 400
@@ -232,7 +233,7 @@ a, button, input
 .our-foto
     background-color: $backBrown
     &__text
-        color: #1b1b1b
+        color: $textDark
         font-family: Roboto
         font-size: 16px
         font-weight: 300
@@ -311,7 +312,7 @@ a, button, input
             right: 50%
             transform: translateX(80px)
             background: url(../img/arrow-next.png) center no-repeat
-            
+
 .plus-in-video
 
     &__left-side
@@ -345,7 +346,7 @@ a, button, input
 .advantages
     background-color: $backBrown
     &__item
-        color: #1b1b1b
+        color: $textDark
         margin-bottom: 30px
         padding-left: 10px
         padding-right: 10px
@@ -390,7 +391,7 @@ a, button, input
         margin-top: 5px
         margin-bottom: 5px
     &__text
-        color: #1b1b1b
+        color: $textDark
         font-size: 15px
         font-weight: 300
         
@@ -478,6 +479,21 @@ footer
     font-size: 15px
     font-weight: 300
     text-align: center
+    
+    .socials-like
+        margin-top: 30px
+        margin-left: auto
+        margin-right: auto
+        width: fit-content
+        max-width: 700px
+        min-width: 300px
+        #vk-like
+            // height: 30px
+
+    .socials-like__item
+        display: inline-block
+        width: 40%
+
     img
         margin-top: 30px
         margin-left: auto
@@ -499,6 +515,120 @@ footer
         bottom: 0
         right: -25px
         z-index: 0
+
+    // Modals
+
+.popup 
+    position: fixed
+    overflow: auto
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 9
+    background-color: rgba(0, 0, 0, 0.5)
+    display: none
+    &__content
+        position: relative
+        display: block
+        margin: 30px auto
+        max-width: 100%
+    &__close 
+        position: absolute
+        top: 0rem
+        right: 1rem
+        font-size: 3rem
+        color: black
+        border: none
+        background: transparent
+        cursor: pointer
+
+.product-info
+    color: $textDark
+    display: none
+    &__content 
+        width: 600px
+        padding: 40px
+        background-color: white
+    
+    &__title
+        text-transform: uppercase
+        font-size: 25px
+        margin-top: 5px
+        margin-bottom: 15px
+        text-align: center
+    &__image
+        max-width: 100%
+        width: 400px
+        margin-left: auto
+        margin-right: auto
+        display: block
+    &__text
+        margin-top: 10px
+        margin-bottom: 10px
+
+.call-offer
+    &__content
+        background-image: url('../img/back-rect-7-small.png')
+        width: 380px
+        padding: 40px 50px
+        // background-color: darken($backBrown, 20%)
+
+    .popup__close
+        color: white
+        font-size: 2rem
+    &__title
+        font-weight: 300
+        font-family: 'Roboto', sans-serif
+        font-size: 22px
+        color: white
+        text-align: center
+        text-transform: none
+        margin-top: 5px
+        margin-bottom: 20px
+
+    form
+        input, button
+            display: block
+            width: 100%
+            margin-bottom: 12px
+        button
+            margin-top: 20px
+    &__form
+
+    .offer__name
+
+    .offer__mail
+
+    .offer__phone
+
+    .offer__submit
+
+.thanks
+    // display: block
+    &__content
+        width: 380px
+        background-color: #fff
+        padding-bottom: 1px
+    .popup__close
+        color: #393939
+        font-size: 2rem
+    &__header
+        background-image: url('../img/back-rect-1-small.png')
+        padding: 1px 40px
+    &__title
+        text-align: center
+        font-weight: 600
+        font-family: 'Roboto', sans-serif
+        font-size: 22px
+        color: #393939
+        margin-top: 20px
+        margin-bottom: 15px
+    &__text
+        padding-left: 40px
+        padding-right: 40px
+        margin-bottom: 30px
+
 
 @media (max-width: 1419px)
     // адаптация псевдоэлементов и вылезания за рамки картинок
@@ -642,7 +772,6 @@ footer
 
     .map
         height: 350px
-
     .placemark
         &__image
             width: 30%
@@ -650,6 +779,10 @@ footer
             width: 67%
             font-size: 13px
             margin-left: 3%
+
+    .product-info
+        &__content
+            margin: 0
 
 @media (max-width: 575px)
     .shadow-bottom::after, .shadow-bottom::before
