@@ -82,10 +82,10 @@
                         <div class="top-offer offer">
                             <p class="top-offer__title">Получите персональное коммерческое предложение</p>
 
-                            <form action="" method="post" class="offer-form">
-                                <input type="text" class="offer__name" placeholder="Ваше имя">
-                                <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес">
-                                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
+                            <form action="server.php" method="post" class="offer-form">
+                                <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
+                                <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
+                                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                                 
                                 <button type="submit" class="offer__submit">Получить КП!</button> 
                             </form>
@@ -306,10 +306,10 @@
             <div class="section__subtitle-image"></div>
 
             <div class="middle-offer__form">
-                <form action="" method="post">
-                    <input type="text" class="offer__name" placeholder="Ваше имя">
-                    <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес">
-                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
+                <form action="server.php" method="post" class="offer-form">
+                    <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
+                    <input type="mail" class="offer__mail" placeholder="Ваш электронный адрес" name="user-mail">
+                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
                     
                     <button type="submit" class="offer__submit">Получить сейчас!</button> 
                 </form>
@@ -450,39 +450,38 @@
             <p class="product-info__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem minus unde quaerat sit ipsum quidem facilis temporibus magni provident fugit ad, atque incidunt. Voluptate possimus quis temporibus dignissimos sed facilis maiores dolores veritatis, blanditiis atque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, impedit.</p>
         </div>
     </div>
-    <!-- Спасибо -->
+    <!-- Окно благодарности -->
     <div class="popup thanks">
         <div class="thanks__content popup__content">
             <div class="popup__close">&times;</div>
             <div class="thanks__header">
-                <h4 class="thanks__title">Спасибо</h4>
+                <h4 class="thanks__title"></h4>
             </div>
-            <p class="thanks__text">Мы перезвоним вам в ближайшее время.</p>
+            <p class="thanks__text"></p>
         </div>
     </div>
     <!-- Перезвоните мне -->
-    <div class="popup call-offer offer">
+    <div class="popup call-offer offer popup-form">
         <div class="call-offer__content popup__content">
             <div class="popup__close">&times;</div>
             <h4 class="call-offer__title">Введите свои данные</h4>
             
-            <div class="call-offer__form">
-                <form action="" method="post">
-                    <input type="text" class="offer__name" placeholder="Ваше имя">
-                    <input type="tel" class="offer__phone" placeholder="Ваш номер телефона">
-                    
-                    <button type="submit" class="offer__submit">Получить сейчас!</button>
-                </form>
-                <div class="offer-confident">
-                    <img src="img/icon-confident.png" alt="Конфиденциально">
-                    <p class="offer-confident__text">Ваши данные не будут переданы третьим лицам, согласно законам РФ</p>
-                    <img src="img/icon-confident.png" alt="Конфиденциально">
-                </div>
+            <form action="server.php" method="post" class="offer-form popup-form">
+                <input type="text" class="offer__name" placeholder="Ваше имя" name="user-name">
+                <input type="tel" class="offer__phone" placeholder="Ваш номер телефона" name="user-phone">
+                
+                <button type="submit" class="offer__submit">Оставить заявку</button>
+            </form>
+            <div class="offer-confident">
+                <img src="img/icon-confident.png" alt="Конфиденциально">
+                <p class="offer-confident__text">Ваши данные не будут переданы третьим лицам, согласно законам РФ</p>
+                <img src="img/icon-confident.png" alt="Конфиденциально">
             </div>
         </div>
     </div>
 
     <script src="js/modals.js"></script>
+    <script src="js/forms.js"></script>
     <!-- Яндекс карты -->
     <script src="js/map.js"></script>
     <!-- Кнопки Нравится Вконтакте -->

@@ -1,12 +1,12 @@
 
-function forms() {
+// function forms() {
 "use strict";
 document.addEventListener('DOMContentLoaded', () => {
 
         // проверка инпутов для телефона и имени
-
-    let phoneInputs = document.querySelectorAll('input[name=user_phone]'),
-        nameInputs = document.querySelectorAll('input[name=user_name]');
+    let phoneInputs = document.querySelectorAll('input[type=tel]'),
+        // mailInputs = document.querySelectorAll('input[type=mail]'),
+        nameInputs = document.querySelectorAll('input[type=text]');
         
     phoneInputs.forEach( (inp) => {
         inp.addEventListener('input', function() {
@@ -21,28 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
         // Submit forms
-
-    let mainForms = document.querySelectorAll('.main_form'),
-        popup = document.querySelector('.popup .form'),
-        popupEngineer = document.querySelector('.popup_engineer .form');
+    let allForms = document.querySelectorAll('.offer-form');
         
-    mainForms.forEach( (form) => {
+    allForms.forEach( (form) => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            submitForm.call(this);
+            submitForm(this);
         });
-    });
-	
-    popup.addEventListener('submit', function(e) {
-        e.preventDefault();
-        submitForm.call(this);
-    });
-    popupEngineer.addEventListener('submit', function(e) {
-        e.preventDefault();
-        submitForm.call(this);
     });
 
 });
-}
+// }
 
-module.exports = forms;
+// module.exports = forms;

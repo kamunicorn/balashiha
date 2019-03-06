@@ -253,6 +253,10 @@ a, button, input {
   margin-top: 12px;
 }
 
+.top-offer form .status {
+  color: #fff;
+}
+
 .middle-offer {
   background-image: url("../img/back-rect-7-small.png");
 }
@@ -285,6 +289,10 @@ a, button, input {
 .middle-offer form button {
   display: block;
   margin: 12px auto 0;
+}
+
+.middle-offer form .status {
+  color: #fff;
 }
 
 .section {
@@ -787,30 +795,34 @@ footer img {
   margin-top: 20px;
 }
 
+.call-offer form .status {
+  color: white;
+}
+
 .thanks__content {
-  width: 380px;
+  width: 320px;
   background-color: #fff;
   padding-bottom: 1px;
 }
 
 .thanks .popup__close {
-  color: #393939;
+  color: #fff;
   font-size: 2rem;
 }
 
 .thanks__header {
-  background-image: url("../img/back-rect-1-small.png");
+  background-image: url("../img/back-rect-7-small.png");
   padding: 1px 40px;
 }
 
 .thanks__title {
   text-align: center;
-  font-weight: 600;
+  font-weight: 400;
   font-family: 'Roboto', sans-serif;
   font-size: 22px;
-  color: #393939;
-  margin-top: 20px;
-  margin-bottom: 15px;
+  color: #fff;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
 
 .thanks__text {
@@ -1156,5 +1168,22 @@ footer img {
   }
   .placemark__info {
     width: 68%;
+  }
+  .thanks__content {
+    width: 300px;
+    max-width: 90%;
+  }
+  .thanks__header {
+    padding: 1px 25px;
+  }
+  .thanks__title {
+    font-size: 20px;
+    margin-top: 12px;
+    margin-bottom: 7px;
+  }
+  .thanks__text {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 20px;
   }
 }

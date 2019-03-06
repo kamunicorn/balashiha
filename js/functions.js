@@ -42,18 +42,20 @@ function hideElem() {
 
 let statusMessage = {
     loading: 'Загрузка...',
-    success: 'Спасибо! Скоро мы с вами свяжемся!',
-    failure: 'Что-то пошло не так.'
+    success: {
+        title: 'Спасибо!',
+        message: 'Спасибо! Скоро мы с вами свяжемся!'
+    },
+    failure: {
+        title: 'Ошибка',
+        message: 'Извините, произошла какая-то ошибка.'
+    }
 };
 
     // отправляет данные в formData, атрибут data - необязателен (данные, которые надо отправить дополнительно к данным с формы), форма - this
-function submitForm(data) {
-    let formInputs = this.querySelectorAll('input'),
-        statusBox = document.createElement('div');
-
-    statusBox.classList.add('status');
-    this.appendChild(statusBox);
-    let formData = new FormData(this);
+function submitForm(form, data) {
+    let formInputs = form.querySelectorAll('input'),
+        formData = new FormData(form);
 
          // append Object to FormData
     if (data) {
@@ -75,35 +77,48 @@ function submitForm(data) {
     console.log(formData2);
     formData = formData2; */
     
-    function postData(data) {
-
-        return new Promise(function(resolve, reject) {
-            let request = new XMLHttpRequest();
-            request.open('POST', 'server.php');
-            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            // request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-            
-            request.onreadystatechange = function() {
-                if (request.readyState < 4) {
-                    // resolve();
-                    statusBox.innerHTML = statusMessage.loading;
-                } else if (request.readyState === 4 && request.status === 200) {
-                    resolve();
-                } else {
-                    reject();
-                }
-            };
-
-            request.send(data);
-
-        });
-    }	// End postData
-
-    postData(formData)
-            // .then(() => statusBox.innerHTML = statusMessage.loading)
-            .then(() => statusBox.innerHTML = statusMessage.success)
-            .catch(() => statusBox.innerHTML = statusMessage.failure);
+    let request = new XMLHttpRequest();
     
+    request.open('POST', 'server.php');
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+    request.send(formData);
+    
+    request.onreadystatechange = function() {
+        if (request.readyState < 4) {
+            setStatus('loading', form);
+        } else if (request.readyState === 4 && request.status === 200) {
+            setStatus('success', form);
+        } else {
+            setStatus('failure', form);
+        }
+    };
+
     formInputs.forEach( (input) => input.value = '' );
-    setTimeout(() => statusBox.remove(), 3000);
+}
+
+function setStatus(type, form) {
+    if (type == 'loading') {
+        let statusBox = document.createElement('div');
+        statusBox.classList.add('status');
+        form.appendChild(statusBox);
+        statusBox.innerHTML = statusMessage.loading;
+        setTimeout(() => statusBox.remove(), 3000);
+
+    } else if (type == 'success' || type == 'failure') {
+
+        if (form.classList.contains('popup-form')) {
+            let popup = document.querySelector('.popup.popup-form');
+            if (form == popup.querySelector('form')) {
+                closePopup(popup);
+            }
+        }
+        showPopup('thanks');
+        let statusTitle = document.querySelector('.thanks__title'),
+            statusText = document.querySelector('.thanks__text');
+
+        statusTitle.innerText = statusMessage[type].title;
+        statusText.innerText = statusMessage[type].message;
+    }
+
 }
