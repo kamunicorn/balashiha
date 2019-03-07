@@ -337,15 +337,9 @@ a, button, input
             left: 81%
             bottom: 10%
             z-index: -1
-    // &__video-item // youtube
-    //     box-sizing: content-box
-    //     width: 600px
-    //     height: 400px
-    //     border: 3px $accentLight solid
-    //     border-radius: 5px
-    &__video-item // тег video
-        width: 600px
-        height: 450px
+    &__video-item
+        width: 620px
+        height: 400px
         border: 3px $accentLight solid
         border-radius: 5px
 
@@ -430,8 +424,8 @@ a, button, input
         margin-top: 30px
         background: url('../img/about-video-back.png') no-repeat center bottom
     &__video-item
-        width: 600px
-        height: 450px
+        width: 460px
+        height: 265px
         border: 3px $accentLight solid
         border-radius: 5px
 
@@ -687,10 +681,9 @@ footer
     .plus-in-video__left-side img
         right: -20px
         width: 120%
-    .plus-in-video, .about-video
-        &__video-item
-            width: 52vw
-            height: 39vw
+    .plus-in-video__video-item
+        width: 50vw
+        height: 32vw
 
     .many-bread__item:nth-child(3n)
         display: none
@@ -710,10 +703,9 @@ footer
             display: none
         &__video-block
             text-align: center
-    .about__video, .plus-in-video
-        &__video-item
-            width: 80vw
-            height: 50vw
+    .plus-in-video__video-item
+        width: 78vw
+        height: 50vw
 
     .our-foto
         &__text:first-child
@@ -757,10 +749,12 @@ footer
             width: 510px
             height: 290px
 
-    .plus-in-video, .about
-        &__video-item
-            width: 90vw
-            height: 65vw
+    .plus-in-video__video-item
+        // width: 80vw
+        // height: 50vw
+    .about__video-item
+        width: 80vw
+        height: 46vw
     .about__video-block
         background: none
 
@@ -817,6 +811,12 @@ footer
 
     .about__video-block
         margin-top: 15px
+    .plus-in-video__video-item
+        width: 90vw
+        height: 58vw
+    .about__video-item
+        width: 90vw
+        height: 52vw
     .section
         padding-bottom: 40px
         &__title
