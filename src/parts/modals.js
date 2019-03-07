@@ -1,8 +1,6 @@
-// function modals() {
-"use strict";
+function modals() {
+    "use strict";
 
-document.addEventListener('DOMContentLoaded', () => {
-    
         // Кнопки "Посмотреть" в каталоге продукции
     let productButtons = document.querySelectorAll('button.product__button');
     productButtons.forEach((btn) => {
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
-// }
+}
 
-// module.exports = modals;
+module.exports = modals;

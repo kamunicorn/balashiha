@@ -1,7 +1,6 @@
 
-// function forms() {
-"use strict";
-document.addEventListener('DOMContentLoaded', () => {
+function forms() {
+    "use strict";
 
         // проверка инпутов для телефона и имени
     let phoneInputs = document.querySelectorAll('input[type=tel]'),
@@ -29,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
             submitForm(this);
         });
     });
+}
 
-});
-// }
-
-// module.exports = forms;
+module.exports = forms;

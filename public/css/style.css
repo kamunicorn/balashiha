@@ -180,14 +180,14 @@ a, button, input {
   transition: -webkit-box-shadow .9s;
   transition: box-shadow .9s;
   transition: box-shadow .9s, -webkit-box-shadow .9s;
-  -webkit-box-shadow: 0 -30px 40px 0 #029678 inset;
-          box-shadow: 0 -30px 40px 0 #029678 inset;
-  background-color: #13efcb;
+  -webkit-box-shadow: 0px -2px 4px 0 #028678 inset, 0 -30px 40px 0 rgba(2, 150, 120, 0.9) inset, 1px 1px 3px 0 #028678 inset, -1px 0px 3px 0 #028678 inset;
+          box-shadow: 0px -2px 4px 0 #028678 inset, 0 -30px 40px 0 rgba(2, 150, 120, 0.9) inset, 1px 1px 3px 0 #028678 inset, -1px 0px 3px 0 #028678 inset;
+  background-color: #0fd9b6;
 }
 
 .offer__submit:hover {
-  -webkit-box-shadow: 0 -40px 50px 0 rgba(2, 174, 149, 0.05) inset;
-          box-shadow: 0 -40px 50px 0 rgba(2, 174, 149, 0.05) inset;
+  -webkit-box-shadow: 0px -1px 3px 0 #028678 inset, 0 -20px 30px 0 rgba(2, 150, 120, 0.2) inset, 1px 1px 3px 0 #028678 inset, -1px 0px 3px 0 #028678 inset;
+          box-shadow: 0px -1px 3px 0 #028678 inset, 0 -20px 30px 0 rgba(2, 150, 120, 0.2) inset, 1px 1px 3px 0 #028678 inset, -1px 0px 3px 0 #028678 inset;
 }
 
 .offer-confident {
@@ -547,6 +547,7 @@ a, button, input {
   text-transform: uppercase;
   -webkit-transition: .4s;
   transition: .4s;
+  cursor: pointer;
 }
 
 .product__button:hover {
@@ -1187,3 +1188,4 @@ footer img {
     margin-bottom: 20px;
   }
 }
+/*# sourceMappingURL=style.css.map */

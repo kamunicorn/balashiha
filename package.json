@@ -1,0 +1,30 @@
+{
+  "name": "balashiha",
+  "version": "1.0.0",
+  "description": "Проект с курса 3 работы в портфолио - сайт про хлебозавод:)",
+  "main": "./index.js",
+  "scripts": {
+    "dev": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamunicorn/Balashiha.git"
+  },
+  "author": "Vera Perelygina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kamunicorn/Balashiha/issues"
+  },
+  "homepage": "https://github.com/kamunicorn/Balashiha#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {},
+  "keywords": []
+}
