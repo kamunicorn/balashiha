@@ -13,13 +13,6 @@ a
 a, button, input
     outline: none
 
-    // Шрифт Nokia для названия сайта в шапке
-// @font-face
-//     font-family: 'Nokia'
-//     src: url('../fonts/Nokia-Sans-S60-Regular.ttf') format('truetype')
-//     font-weight: normal
-//     font-style: normal
-
 .bar
     background-image: url('../img/back-rect-1-small.jpg')
     height: 85px
@@ -33,11 +26,6 @@ a, button, input
         border-left: 4px white solid
         border-right: 4px white solid
     &__site-name
-        // font-family: 'Nokia', 'Roboto', Arial, sans-serif
-        // color: #393939
-        // font-size: 26px
-        // font-weight: 700
-        // text-transform: uppercase
         margin-top: 15px
         margin-bottom: 0px
     &__site-subtitle
@@ -134,14 +122,12 @@ a, button, input
         font-family: 'Roboto Condensed', 'Roboto', sans-serif
         color: #ffffff
         font-size: 18px
-        font-weight: 600
+        font-weight: 700
         text-transform: uppercase
         transition: box-shadow .9s
-        // box-shadow: 0 -30px 40px 0 rgba(2,150,120,1) inset
         box-shadow: 0px -2px 4px 0 #028678 inset, 0 -30px 40px 0 rgba(2,150,120,0.9) inset, 1px 1px 3px 0 #028678 inset, -1px 0px 3px 0 #028678 inset
         background-color: #0fd9b6
         &:hover
-            // box-shadow: 0 -40px 50px 0 rgba(2,174,149,.05) inset
             box-shadow: 0px -1px 3px 0 #028678 inset, 0 -20px 30px 0 rgba(2,150,120,0.2) inset, 1px 1px 3px 0 #028678 inset, -1px 0px 3px 0 #028678 inset
 
     &-confident
@@ -439,9 +425,79 @@ a, button, input
         &:hover
             filter: grayscale(0%)
 
-.map
+.map-container
     width: 100%
     height: 500px
+
+// Блок-обертка, где мы задаем фоновое изображение скриншотом как на карте
+.map-container
+    position: relative
+    cursor: pointer
+    background: url('../img/map-before-load.jpg') center center no-repeat
+    // background-position: center center
+    background-size: cover
+    // box-shadow: 0 0 2em  0 rgba(0,0,0,.2)
+ 
+    // Блок, в котором появится Яндекс.Карта
+    #map-yandex
+        position: relative
+        z-index: 7
+        width: 100%
+        height: 100%
+        cursor: pointer
+        background-color: transparent
+
+    .loader
+        position: absolute
+        z-index: 6
+        // top: -100%
+        top: 0
+        left: 0
+        box-sizing: border-box
+        width: 100%
+        height: 100%
+        // overflow: hidden
+        color: #000000
+        transition: opacity .7s ease
+        opacity: 0
+        background-color: rgba(0,0,0,.55)
+    
+        &:after, &:before
+            box-sizing: border-box
+        
+        &.is-active
+            top: 0
+            opacity: 1
+            z-index: 15
+        
+        &-default:after
+            position: absolute
+            // top: calc(50% - 24px)
+            // left: calc(50% - 24px)
+            top: 50%
+            transform: translateY(-24px)
+            left: 50%
+            transform: translateX(-24px)
+            width: 48px
+            height: 48px
+            content: ''
+            animation: rotation 1s linear infinite
+            border: solid 8px #ffffff
+            border-left-color: transparent
+            border-radius: 50%
+ 
+@keyframes rotation
+    from
+        transform: rotate(0)
+    to
+        transform: rotate(359deg)
+ 
+@keyframes blink
+    from
+        opacity: .5
+    to
+        opacity: 1
+
 
 .placemark
     color: #363636
@@ -686,7 +742,7 @@ footer
 
     .many-bread__item:nth-child(3n)
         display: none
-    .map
+    .map-container
         height: 400px
 
 @media (max-width: 991px)
@@ -762,7 +818,7 @@ footer
     .many-bread__item:nth-child(2n)
         display: none
 
-    .map
+    .map-container
         height: 350px
     .placemark
         &__image
@@ -903,7 +959,7 @@ footer
             width: auto
             margin-left: auto
 
-    .map
+    .map-container
         height: 250px
     .placemark
         padding: 0
