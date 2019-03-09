@@ -5,7 +5,7 @@ function map() {
     let placemarkBlock = 
     '<div class="placemark">' +
         '<div class="placemark__image">' +
-            '<img src="img/map-image.png" alt="Здание завода">' +
+            '<img src="img/map-image.jpg" alt="Здание завода">' +
         '</div>' +
         '<div class="placemark__info">' +
             '<div class="placemark__title">Мы находимся:</div>' +
