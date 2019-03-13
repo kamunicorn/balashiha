@@ -6,6 +6,8 @@ $textDark: #1b1b1b
 
 html
     font-family: 'Roboto', Arial, sans-serif
+    margin: 0
+    padding: 0
 body
     margin: 0
 a
@@ -69,7 +71,7 @@ a, button, input
 .header
     padding-bottom: 70px
     &__title
-        font-family: 'Roboto Condensed', 'Roboto'
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
         text-align: center
         margin-top: 40px
         margin-bottom: 10px
@@ -81,7 +83,7 @@ a, button, input
         text-align: center
         margin-top: 10px
         color: #272727
-        font-family: 'Roboto Condensed', 'Roboto'
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
         font-size: 22px
         font-weight: 700
         text-transform: uppercase
@@ -119,7 +121,7 @@ a, button, input
 
     &__submit
         height: 57px
-        font-family: 'Roboto Condensed', 'Roboto'
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
         color: #ffffff
         font-size: 18px
         font-weight: 700
@@ -167,7 +169,7 @@ a, button, input
     &__title
         text-align: center
         color: $accentLight
-        font-family: 'Roboto Condensed', 'Roboto'
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
         font-size: 16px
         text-transform: uppercase
     .offer-confident
@@ -212,7 +214,7 @@ a, button, input
         text-align: center
         text-transform: uppercase
         color: $textDark
-        font-family: 'Roboto Condensed', 'Roboto'
+        font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif
         font-size: 32px
         font-weight: 400
     &__subtitle-image
@@ -269,21 +271,23 @@ a, button, input
             transform: translateX(-50%)
             background-color: rgba(0,0,0,.5)
             text-align: center
-            padding: 3px 20px
+            padding: 4px 25px
             border-radius: 3px
-            width: 160px
+            width: 170px
             li
                 display: inline
                 margin: 0 4px
+                padding: 0
             button
-                color: #fff
+                color: transparent
+                margin: 0
+                padding: 0
                 background-color: #fff
-                font-size: 10.5px
+                font-size: 11px
                 border: none
                 height: 12px
                 width: 12px
             .slick-active button
-                color: $accentRed
                 background-color: $accentRed
 
         &__arrow
@@ -297,12 +301,12 @@ a, button, input
             bottom: 18px
         &__prev
             left: 50%
-            transform: translateX(-80px)
+            transform: translateX(-85px)
             background: url(../img/arrow-prev.png) center no-repeat
             
         &__next
             right: 50%
-            transform: translateX(80px)
+            transform: translateX(85px)
             background: url(../img/arrow-next.png) center no-repeat
 
 .plus-in-video
@@ -631,7 +635,6 @@ footer
         font-size: 2rem
     &__title
         font-weight: 300
-        font-family: 'Roboto'
         font-size: 22px
         color: white
         text-align: center
@@ -663,7 +666,6 @@ footer
     &__title
         text-align: center
         font-weight: 400
-        font-family: 'Roboto'
         font-size: 22px
         color: #fff
         margin-top: 15px
