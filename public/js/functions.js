@@ -97,7 +97,6 @@ function submitForm(form, data) {
         }
     };
 
-    // formInputs.forEach( (input) => input.value = '' );
 }
 
 function showStatus(type, form) {
@@ -106,11 +105,13 @@ function showStatus(type, form) {
     
     if (type == 'loading') {
         statusBox.innerText = statusMessage.loading;
-        // setTimeout(() => statusBox.innerText = '', 3000);
 
     } else if (type == 'success' || type == 'failure') {
         statusBox.innerText = '';
-        formInputs.forEach( (input) => input.value = '' );
+        // formInputs.forEach( (input) => input.value = '' );
+        formInputs.forEach(function (input) {
+            return input.value = '';
+        });
 
         if (form.classList.contains('popup-form')) {
             let popup = document.querySelector('.popup.popup-form');
